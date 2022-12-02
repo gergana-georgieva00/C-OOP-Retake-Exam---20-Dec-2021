@@ -19,5 +19,11 @@
         {
             Assert.Throws<ArgumentException>(() => book = new Book("", "author"));
         }
+
+        [Test]
+        public void BookNameGetterWorks()
+        {
+            Assert.That(book.BookName, Is.EqualTo("bookName"));
+        }
     }
 }
