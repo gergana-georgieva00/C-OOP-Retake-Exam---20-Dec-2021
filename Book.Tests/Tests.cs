@@ -64,5 +64,11 @@
             string result = book.FindFootnote(123);
             Assert.That(result, Is.EqualTo($"Footnote #123: text"));
         }
+
+        [Test]
+        public void AlterFootnoteWithNonExistentKeyShouldThrow()
+        {
+            Assert.Throws<InvalidOperationException>(() => book.AlterFootnote(123, "new"));
+        }
     }
 }
