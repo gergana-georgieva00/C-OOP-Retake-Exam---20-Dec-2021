@@ -37,5 +37,11 @@
         {
             Assert.Throws<ArgumentException>(() => book = new Book("bookName", ""));
         }
+
+        [Test]
+        public void FootnoteCountGetterWorks()
+        {
+            Assert.That(book.FootnoteCount, Is.EqualTo(0));
+        }
     }
 }
