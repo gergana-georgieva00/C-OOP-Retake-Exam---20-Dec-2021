@@ -25,5 +25,11 @@
         {
             Assert.That(book.BookName, Is.EqualTo("bookName"));
         }
+
+        [Test]
+        public void AuthorGetterWorks()
+        {
+            Assert.That(book.Author, Is.EqualTo("author"));
+        }
     }
 }
