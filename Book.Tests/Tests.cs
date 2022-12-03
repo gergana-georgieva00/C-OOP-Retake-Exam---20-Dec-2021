@@ -31,5 +31,11 @@
         {
             Assert.That(book.Author, Is.EqualTo("author"));
         }
+
+        [Test]
+        public void InvalidAuthorShouldThrow()
+        {
+            Assert.Throws<ArgumentException>(() => book = new Book("bookName", ""));
+        }
     }
 }
