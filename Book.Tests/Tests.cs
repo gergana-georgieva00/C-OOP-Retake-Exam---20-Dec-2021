@@ -43,5 +43,12 @@
         {
             Assert.That(book.FootnoteCount, Is.EqualTo(0));
         }
+
+        [Test]
+        public void AddFootnoteWithExistentKeyShouldThrow()
+        {
+            book.AddFootnote(123, "text");
+            Assert.Throws<InvalidOperationException>(() => book.AddFootnote(123, "txt"));
+        }
     }
 }
