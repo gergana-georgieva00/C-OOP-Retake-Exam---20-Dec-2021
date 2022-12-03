@@ -70,5 +70,13 @@
         {
             Assert.Throws<InvalidOperationException>(() => book.AlterFootnote(123, "new"));
         }
+
+        [Test]
+        public void AlterFootnoteWorks()
+        {
+            book.AddFootnote(123, "text");
+            book.AlterFootnote(123, "new");
+            Assert.That(book.FindFootnote(123).Split()[2], Is.EqualTo("new"));
+        }
     }
 }
