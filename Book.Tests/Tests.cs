@@ -56,5 +56,13 @@
         {
             Assert.Throws<InvalidOperationException>(() => book.FindFootnote(123));
         }
+
+        [Test]
+        public void FindFootnoteWorks()
+        {
+            book.AddFootnote(123, "text");
+            string result = book.FindFootnote(123);
+            Assert.That(result, Is.EqualTo($"Footnote #123: text"));
+        }
     }
 }
