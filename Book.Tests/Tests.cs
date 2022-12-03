@@ -50,5 +50,11 @@
             book.AddFootnote(123, "text");
             Assert.Throws<InvalidOperationException>(() => book.AddFootnote(123, "txt"));
         }
+
+        [Test]
+        public void FindFootnoteWithNonExistentKeyShouldThrow()
+        {
+            Assert.Throws<InvalidOperationException>(() => book.FindFootnote(123));
+        }
     }
 }
